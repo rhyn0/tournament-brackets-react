@@ -1,7 +1,10 @@
 import type { Config } from "tailwindcss";
 
 const config = {
-    content: ["./src/**/*.{tsx,ts,jsx,js}", "index.ts"],
+    important: ".tbr",
+    prefix: "tbr-",
+    content: ["./src/**/*.{tsx,ts,jsx,js}"],
+    darkMode: "class",
     theme: {
         extend: {},
     },

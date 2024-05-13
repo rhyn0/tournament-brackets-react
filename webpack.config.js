@@ -1,27 +1,29 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
-const path = require('path');
+const path = require("path");
 
-const isProduction = process.env.NODE_ENV == 'production';
+const isProduction = process.env.NODE_ENV == "production";
 
-const DIST_DIR = path.resolve(__dirname, 'dist');
+const DIST_DIR = path.resolve(__dirname, "dist");
 
 const config = {
-    entry: './index.ts',
+    entry: {
+        "tournament-brackets-react.min": "./src/main.ts",
+    },
     output: {
         path: DIST_DIR,
         filename: "bundle.js",
     },
     devServer: {
         open: true,
-        host: 'localhost',
+        host: "localhost",
         port: 3000,
         hot: true,
         compress: true,
         historyApiFallback: true,
         static: {
-            directory: DIST_DIR, 
-        }
+            directory: DIST_DIR,
+        },
     },
     plugins: [
         // Add your plugins here
@@ -31,34 +33,41 @@ const config = {
         rules: [
             {
                 test: /\.(ts|tsx)$/i,
-                loader: 'ts-loader',
-                exclude: ['/node_modules/', '/jest.config.ts/', '/jest.setup.ts/'],
+                loader: "ts-loader",
+                exclude: [
+                    "/node_modules/",
+                    "/jest.config.ts/",
+                    "/jest.setup.ts/",
+                ],
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-                type: 'asset',
+                type: "asset",
             },
             {
                 test: /\.css$/i,
+                exclude: /node_modules/,
                 include: path.resolve(__dirname, "src"),
-                use: ["style-loader", "css-loader", "postcss-loader"]
-            }
+                use: [
+                    { loader: "style-loader" },
+                    { loader: "css-loader", options: { importLoaders: 1 } },
+                    { loader: "postcss-loader" },
+                ],
+            },
             // Add your rules for custom modules here
             // Learn more about loaders from https://webpack.js.org/loaders/
         ],
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.jsx', '.js', '...'],
+        extensions: [".tsx", ".ts", ".jsx", ".js", "..."],
     },
 };
 
 module.exports = () => {
     if (isProduction) {
-        config.mode = 'production';
-        
-        
+        config.mode = "production";
     } else {
-        config.mode = 'development';
+        config.mode = "development";
     }
     return config;
 };

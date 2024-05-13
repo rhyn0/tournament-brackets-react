@@ -2,13 +2,12 @@
     "extends": [
         "prettier",
         "plugin:@typescript-eslint/recommended",
-        "eslint:recommended"
+        "eslint:recommended",
+        "plugin:storybook/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "root": true,
-    "plugins": [
-        "@typescript-eslint"
-    ],
+    "plugins": ["@typescript-eslint"],
     "env": {
         "browser": true,
         "es2021": true,

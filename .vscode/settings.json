@@ -4,10 +4,17 @@
     "tailwindCSS.experimental.configFile": "tailwind.config.js",
     "editor.formatOnSave": true,
     "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "editor.tabSize": 4,
+    "eslint.enable": true,
+    "eslint.lintTask.enable": true,
+    "eslint.lintTask.options": "-c ./.eslintrc.json",
+    "eslint.options": {
+        "configFile": "./.eslintrc.json"
+    },
+    "eslint.run": "onSave"
 }
