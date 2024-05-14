@@ -12,7 +12,9 @@
         "lint": "eslint -c .eslintrc.json",
         "format:fix": "prettier --config ./.prettierrc.toml --write .",
         "format:check": "prettier --config ./.prettierrc.toml --check .",
-        "format": "npm run format:check"
+        "format": "npm run format:check",
+        "pre-commit": "./.husky/pre-commit",
+        "prepare": "husky"
     },
     "repository": {
         "type": "git",

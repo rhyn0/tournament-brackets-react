@@ -1,7 +1,7 @@
 {
     "prettier.enable": true,
     "prettier.configPath": ".prettierrc.toml",
-    "tailwindCSS.experimental.configFile": "tailwind.config.js",
+    "tailwindCSS.experimental.configFile": "tailwind.config.ts",
     "editor.formatOnSave": true,
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -16,5 +16,9 @@
     "eslint.options": {
         "configFile": "./.eslintrc.json"
     },
-    "eslint.run": "onSave"
+    "eslint.run": "onSave",
+    "inlineFold.autoFold": true,
+    "inlineFold.regex": "(class|className)=[`'{\"]([^`'\"}]{28,})[`'\"}]",
+    "inlineFold.regexFlags": "g",
+    "inlineFold.regexGroup": "2"
 }

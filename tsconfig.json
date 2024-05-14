@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "baseUrl": "src/",
+        "baseUrl": "./",
         "target": "ES2017",
         "lib": ["dom", "dom.iterable"],
         "allowJs": true,
@@ -21,11 +21,14 @@
         "outDir": "./dist",
         "types": ["node", "jest"],
         "paths": {
-            "Utils/*": ["./utils/*"],
-            "Core/*": ["./core/*"]
+            "Utils/*": ["./src/utils/*"],
+            "Core/*": ["./src/core/*"],
+            "Components/*": ["./src/components/*"],
+            "Hooks/*": ["./src/hooks/*"],
+            "@/*": ["./src/*"]
         },
         "jsx": "react-jsx"
     },
-    "include": ["src/**/*"],
+    "include": ["src/*"],
     "exclude": ["node_modules", "dist"]
 }

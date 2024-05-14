@@ -1,7 +1,8 @@
-import "../src/";
 import { withThemeByClassName } from "@storybook/addon-themes";
-/** @type { import('@storybook/react').Preview } */
-const preview = {
+import type { Preview } from "@storybook/react";
+import "../src/tailwind-entry.css";
+
+const preview: Preview = {
     parameters: {
         controls: {
             matchers: {
