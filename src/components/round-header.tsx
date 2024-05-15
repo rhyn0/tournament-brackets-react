@@ -7,18 +7,8 @@ export interface RoundHeaderProps {
     width: number;
     roundHeader: RoundHeaderOptions;
     canvasPadding: number;
-    numOfRounds: number;
-    tournamentRoundText: string;
-    columnIndex: number;
+    headerText: string;
 }
-
-// const Text = styled.text`
-//     font-family: ${({ theme }) => theme.fontFamily};
-//     color: ${({ theme }) => theme.textColor.highlighted};
-// `;
-// const Rect = styled.rect.attrs(({ theme }) => ({
-//     fill: theme.roundHeaders.background,
-// }))``;
 
 export default function RoundHeader({
     x,
@@ -26,9 +16,7 @@ export default function RoundHeader({
     width,
     roundHeader,
     canvasPadding,
-    numOfRounds,
-    tournamentRoundText,
-    columnIndex,
+    headerText,
 }: RoundHeaderProps) {
     return (
         <g>
@@ -50,20 +38,7 @@ export default function RoundHeader({
                 dominantBaseline="middle"
                 textAnchor="middle"
             >
-                {!roundHeader.roundTextGenerator &&
-                    columnIndex + 1 === numOfRounds &&
-                    "Final"}
-                {!roundHeader.roundTextGenerator &&
-                    columnIndex + 1 === numOfRounds - 1 &&
-                    "Semi-final"}
-                {!roundHeader.roundTextGenerator &&
-                    columnIndex + 1 < numOfRounds - 1 &&
-                    `Round ${tournamentRoundText}`}
-                {roundHeader.roundTextGenerator &&
-                    roundHeader.roundTextGenerator(
-                        columnIndex + 1,
-                        numOfRounds,
-                    )}
+                {headerText}
             </text>
         </g>
     );

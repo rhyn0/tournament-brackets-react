@@ -14,18 +14,16 @@ export const Primary: Story = {
     args: {
         x: 100,
         y: 100,
-        width: 100,
+        width: 200,
         roundHeader: {
             isShown: true,
-            height: 100,
+            height: 35,
             marginBottom: 10,
             fontSize: 12,
-            fontColor: "black",
             backgroundColor: "white",
-            fontFamily: '"Roboto", "Arial", "Helvetica", "sans-serif"',
-            roundTextGenerator: () => "Round 1",
         },
-        canvasPadding: 1,
+        canvasPadding: 0,
+        headerText: "Round 1",
     },
     render: (args) => {
         return (

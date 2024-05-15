@@ -28,10 +28,6 @@ export interface RoundHeaderOptions {
     fontColor?: string;
     backgroundColor?: string;
     fontFamily?: string;
-    roundTextGenerator?: (
-        currentRoundNumber: number,
-        roundsTotalNumber: number,
-    ) => string | undefined;
 }
 
 export interface Match {
